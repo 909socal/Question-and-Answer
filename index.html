@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question and Answer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Question and Answer</h1>
+  <div class = 'container'>
+    <form id='nForm'>
+      <div class="form-group">
+       <label for="usr"> Title: </label>
+       <div class="input-group">
+        <input type="text" class="form-control" id="title" >
+      </div>
+      <br>
+
+      <label for="usr">Content: </label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="content">
+      </div>
+      <br>
+      <div class="form-group col-xs-4 date">
+        <label for="usr">Date:</label>
+        <input type="date" class="form-control" id="date">
+      </div>
+      <br>
+      <button class="btn btn-default pull-left add ">Add</button>
+    </form>
+
+    <table class="table" id= 'myBigTable'>
+      <thead>
+        <tr>
+          <th>Title: </th>
+          <th>Date: </th>
+          <th>Content: </th>
+        </tr>
+      </thead>
+      <tbody id= 'bigBoy'>
+        <tr id ='template'>
+          <td class = 'sTitle'></td>
+          <td class = 'sDate'></td>
+          <td class = 'Delete'>
+           <!-- <button type="button" data-toggle="modal" id="modalB" class="btn btn-info btn-md myButton" data-target="#myModal">Open Content</button> -->
+           <button type="button" id='modalB' class="btn btn-info btn-md myButton" data-toggle="modal" data-target="#myModal">Open Content</button>
+         </td>
+       </tr>
+     </tbody>
+   </table>
+   <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Content:</h3>
+          <h4 class= 'sContent'></h4>
+        </div>
+        <div class="modal-body">
+          <div id="messageDiv">
+            <input type="text" id="message">
+            <button id="sendMessage" class='btn'>Send</button>
+          </div>
+          <ul id="messages"></ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
+
+

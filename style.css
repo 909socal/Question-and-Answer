@@ -1,0 +1,30 @@
+body{
+	background-color: black;
+	color: white;
+}
+#title , #content , #date{
+	width: 500px;
+}
+
+#template{
+	display: none;
+}
+
+.btn{
+	float:none;
+	border: 5px solid white;
+	color: black;
+	background-color: black;
+	color: white;
+}
+.form-group{
+	float: none;
+	padding-left: 0;
+
+}
+#message, .modal-title{
+	color: black;
+}
+.sContent, #messages{
+	color: black;
+}
