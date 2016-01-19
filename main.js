@@ -34,16 +34,16 @@ function sellForm(event){
  }
 
  questionRef.on('child_added', function(snapshot) {
- 	var snapshotVal = snapshot.val();
- 	console.log(snapshot)
+  var snapshotVal = snapshot.val();
+  //console.log(snapshot)
   var $tr = $('#template').clone();
   $tr.removeAttr('id');
-  $tr.children('.sTitle').text(snapshotVal.title);
+  $tr.children('.sTitle').text(snapshotVal.title).attr('id', snapshot.key());
   $tr.children('.sDate').text(snapshotVal.date);
-  console.log(snapshot.key())
+  $tr.find('.myButton').attr('data-key', snapshot.key());
+
   $('#bigBoy').append($tr);
   $('.sContent').text(snapshotVal.content);
-  
 
   
 });
@@ -55,7 +55,12 @@ function sendMessage() {
   messagesRef.push({
     message: message
   });
+  var itemDeleted = $(this).closest('tr').remove();
+// debugger;
+  // $messages.eq($messages.length-1).remove();
+
 }
+
 
 messagesRef.on('child_added', function(snapshot) {
   var messageObject = snapshot.val();
@@ -64,5 +69,6 @@ messagesRef.on('child_added', function(snapshot) {
 
   var $li = $('<li>').text(message);
   $messages.append($li);
+  $('tr').last().remove();
 });
 
